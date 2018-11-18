@@ -46,3 +46,7 @@ properties:
       the timestamp of the last collected measurement in yyyymmddhhmmss format
       (UTC)
     example: 20171211153025
+  UserUid:
+    type: string
+    description: The UID of the owner
+    example: 44ed9c85-dcb6-4231-b62a-129dd02f80d4

@@ -1,6 +1,9 @@
 post:
-  summary: List the available sensors location
-  description: This action returns the sensors locations, optionally filtered by the senson(s) owner.
+  summary: List the available sensor's locations
+  description: >
+    This action returns the sensors locations, optionally filtered by  sensor
+    owner, or by flags that allow the caller to request sensors which have not
+    updated in the last 30 days, or sensors which have invalid locations.
   tags:
     - Locations
   consumes:
@@ -14,13 +17,25 @@ post:
           - DataSourceCodes
         properties:
           DataSourceCodes:
-            $ref: "#/definitions/DataSourceCodes"
+            $ref: '#/definitions/DataSourceCodes'
           UserId:
             type: string
-            description: The optional user identifier
+            description: An optional user UID
             example: foobar123
+          InvalidLocation:
+            type: boolean
+            default: false
+            description: >-
+              An optional flag which if set to true requests only sensor
+              locations with an invalid location of (0, 0).
+          StaleData:
+            type: boolean
+            default: false
+            description: >-
+              An optional flag which if true requests only sensor locations that
+              have not been synced in the last 30 days.
   responses:
-    200:
+    '200':
       description: OK
       schema:
         type: object
@@ -28,17 +43,17 @@ post:
           Locations:
             type: object
             properties:
-              "Grow.Thingful#zg9xr321":
-                $ref: "#/definitions/Location"
-    400:
+              'Grow.Thingful#zg9xr321':
+                $ref: '#/definitions/GetLocation'
+    '400':
       description: Bad request
       schema:
-        $ref: "#/definitions/Error400"
-    422:
+        $ref: '#/definitions/Error400'
+    '422':
       description: Unprocessable entity
       schema:
-        $ref: "#/definitions/Error422"
-    500:
+        $ref: '#/definitions/Error422'
+    '500':
       description: Internal server error
       schema:
-        $ref: "#/definitions/Error500"
+        $ref: '#/definitions/Error500'
