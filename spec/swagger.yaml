@@ -4,11 +4,11 @@ basePath: /api
 schemes:
   - https
 info:
-  version: 0.1.0
-  title: Thingful GROW Node REST API
+  version: 0.1.1
+  title: Thingful GROW Node HTTP API
   contact:
-    name: Sam
-    url: 'https://www.thingful.net/site/contact/'
+    name: Thingful
+    url: 'https://thingful.net/site/contact/'
     email: dev@thingful.net
   license:
     name: MIT
@@ -17,12 +17,12 @@ info:
     url: ''
     backgroundColor: '#0033A0'
   description: >
-    <p>The Thingful GROW Node API is a RESTful API built according to the
-    HydroNet4 standards.</p>
+    The Thingful GROW Node API is a HTTP API built according to the HydroNet4
+    standards.
 
 
-    <p><b>Clients must be authenticated in order to access the API.<br /> Please
-    contact dev@thingful.net or sam@thingful.net to request an API key.</b></p>
+    <b>Clients must be authenticated in order to access the API.<br /> Please
+    contact dev@thingful.net with any enquiries</b>
 
     <p>Base URL: https://grow.thingful.net/api</p>
 security:

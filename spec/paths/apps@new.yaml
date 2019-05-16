@@ -1,0 +1,41 @@
+post:
+  summary: Create new application API key
+  description: >
+    This action creates a new application API key which can then be used to make
+    authenticated
+
+    requests to the API. In order to call this action it must be called with an
+    API key that has
+
+    create-users scope.
+  tags:
+    - Apps
+  consumes:
+    - application/json
+  parameters:
+    - in: body
+      name: App
+      description: Definition of the application API key to create
+      schema:
+        $ref: '#/definitions/AppRequest'
+  responses:
+    '201':
+      description: Created
+      schema:
+        $ref: '#/definitions/AppResponse'
+    '400':
+      description: Bad request
+      schema:
+        $ref: '#/definitions/Error400'
+    '401':
+      description: Unauthorized
+      schema:
+        $ref: '#/definitions/Error401'
+    '422':
+      description: Unprocessable entity
+      schema:
+        $ref: '#/definitions/Error422'
+    '500':
+      description: Internal server error
+      schema:
+        $ref: '#/definitions/Error500'

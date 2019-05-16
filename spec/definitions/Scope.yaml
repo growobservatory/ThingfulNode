@@ -1,0 +1,16 @@
+type: array
+items:
+  type: string
+  enum:
+    - create-users
+    - timeseries
+    - metadata
+description: >-
+  Array of scope permissions that should be granted to the application. If no
+  value is supplied the default value of `timeseries` is used.
+example:
+  - create-users
+  - metadata
+  - timeseries
+default:
+  - timeseries

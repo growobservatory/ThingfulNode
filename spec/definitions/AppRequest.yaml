@@ -1,0 +1,18 @@
+type: object
+required:
+  - App
+properties:
+  App:
+    type: object
+    description: Request object containing the App definition
+    required:
+      - Name
+    properties:
+      Name:
+        type: string
+        description: >-
+          Label for the application which may be a name of any sort or even an
+          email address. Must be unique to the application.
+        example: sam@example.com
+      Scope:
+        $ref: '#/definitions/Scope'
