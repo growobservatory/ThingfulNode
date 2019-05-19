@@ -1,14 +1,11 @@
 type: object
 required:
-  - App
+  - ApiKey
 properties:
-  App:
-    type: object
-    properties:
-      ApiKey:
-        type: string
-        description: >
-          The API key value that can be used for making authenticated requests.
-          This is the only time this value will be available to be saved so the
-          client must make sure to keep a secure copy of this value.
-        example: 4cvb4ymeyy-68a00b0fe8ad04cf37c8e0d6d22151cb
+  ApiKey:
+    type: string
+    description: >
+      The API key value that can be used for making authenticated requests. This
+      is the only time this value will be available to be saved so the client
+      must make sure to keep a secure copy of this value.
+    example: 4cvb4ymeyy-68a00b0fe8ad04cf37c8e0d6d22151cb
